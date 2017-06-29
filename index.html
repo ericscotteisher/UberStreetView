@@ -8,7 +8,7 @@
        * element that contains the map. */
       #map {
         height: 100%;
-        opacity: 0;
+        z-index: -10;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -93,7 +93,7 @@
         var toggle = panorama.getVisible();
         if (toggle == false) {
           panorama.setVisible(true);
-          document.getElementById("map").style.opacity = 1;
+          document.getElementById("map").style.z-index = 4;
         } else {
           panorama.setVisible(false);
           
