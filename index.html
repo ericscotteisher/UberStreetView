@@ -8,6 +8,7 @@
        * element that contains the map. */
       #map {
         height: 100%;
+        opacity: 0;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -17,12 +18,9 @@
       }
       #floating-panel {
         position: absolute;
-        top: 10px;
-        left: 25%;
+        top: 95%;
+        left: 60%;
         z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
         text-align: center;
         font-family: 'Roboto','sans-serif';
         line-height: 30px;
@@ -31,13 +29,34 @@
       #floating-panel {
         margin-left: -100px;
       }
+
+      #bigback {
+        width: 100%; 
+        height: 100%; 
+        position: fixed; 
+        left: 0px; 
+        top: 0px; 
+        z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+      }
+
+      .stretch {
+          width:100%;
+          height:100%;
+      }
+
     </style>
   </head>
   <body>
     <div id="floating-panel">
       <input type="button" value="Toggle Street View" onclick="toggleStreetView();"></input>
     </div>
+
     <div id="map"></div>
+
+    <div id="bigback">
+      <img src="http://i.imgur.com/HuAblmj.png" class="stretch" alt="" />
+    </div>
+
     <script>
       var panorama;
 
@@ -53,9 +72,9 @@
 
         // Set up the markers on the map
         var cafeMarker = new google.maps.Marker({
-            position: {lat: 37.776093, lng: -122.418019},
+            position: {lat: 37.775976, lng: -122.418424},
             map: map,
-            icon: 'http://i.imgur.com/sTRPNdS.png',
+            icon: 'http://i.imgur.com/KwIJ0OM.png',
             title: 'Cafe'
         });
 
@@ -74,8 +93,11 @@
         var toggle = panorama.getVisible();
         if (toggle == false) {
           panorama.setVisible(true);
+          document.getElementById("map").style.opacity = 1;
         } else {
           panorama.setVisible(false);
+          
+
         }
       }
     </script>
