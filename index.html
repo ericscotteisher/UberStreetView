@@ -16,15 +16,15 @@
         margin: 0;
         padding: 0;
       }
+
       #floating-panel {
         position: absolute;
         top: 95%;
         left: 60%;
+
         z-index: 5;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
+        
+
       }
       #floating-panel {
         margin-left: -100px;
@@ -48,13 +48,13 @@
   </head>
   <body>
     <div id="floating-panel">
-      <input type="button" value="Toggle Street View" onclick="toggleStreetView();"></input>
+      <input type="button" style="height:200px;" value="Toggle Street View" onclick="toggleStreetView();"></input>
     </div>
 
     <div id="map"></div>
 
     <div id="bigback">
-      <img src="http://i.imgur.com/HuAblmj.png" class="stretch" alt="" />
+      <img src="http://i.imgur.com/UiEni9i.png" class="stretch" alt="" />
     </div>
 
     <script>
@@ -72,7 +72,7 @@
 
         // Set up the markers on the map
         var cafeMarker = new google.maps.Marker({
-            position: {lat: 37.775976, lng: -122.418424},
+            position: {lat: 37.775976, lng: -122.418724},
             map: map,
             icon: 'http://i.imgur.com/KwIJ0OM.png',
             title: 'Cafe'
