@@ -20,7 +20,7 @@
         top: 10px;
         left: 25%;
         z-index: 5;
-        background-color: #888;
+        background-color: #fff;
         padding: 5px;
         border: 1px solid #999;
         text-align: center;
@@ -42,7 +42,7 @@
       var panorama;
 
       function initMap() {
-        var astorPlace = {lat: 40.729884, lng: -73.990988};
+        var astorPlace = {lat: 37.776093, lng: -122.418019};
 
         // Set up the map
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -53,25 +53,12 @@
 
         // Set up the markers on the map
         var cafeMarker = new google.maps.Marker({
-            position: {lat: 40.730031, lng: -73.991428},
+            position: {lat: 37.775310, lng: -122.418201},
             map: map,
-            icon: 'https://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=cafe|FFFF00',
+            icon: 'http://i.imgur.com/sTRPNdS.png',
             title: 'Cafe'
         });
 
-        var bankMarker = new google.maps.Marker({
-            position: {lat: 40.729681, lng: -73.991138},
-            map: map,
-            icon: 'https://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=dollar|FFFF00',
-            title: 'Bank'
-        });
-
-        var busMarker = new google.maps.Marker({
-            position: {lat: 40.729559, lng: -73.990741},
-            map: map,
-            icon: 'https://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=bus|FFFF00',
-            title: 'Bus Stop'
-        });
 
         // We get the map's default panorama and set up some defaults.
         // Note that we don't yet set it visible.
